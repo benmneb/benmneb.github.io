@@ -3,11 +3,8 @@ import { GlobalStyles } from './assets/GlobalStyles';
 
 import { NavTabs } from './components';
 import { Hello, Projects, Contact } from './sections';
-import { useAcklytics } from './assets';
 
 export function App() {
-  useAcklytics();
-
   return (
     <StyledTheme>
       <GlobalStyles />
