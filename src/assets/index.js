@@ -6,3 +6,5 @@ export * from './Icons';
 export { mainProjects } from './mainProjects';
 
 export { themes } from './terminalThemes';
+
+export { useAcklytics } from './useAcklytics';
