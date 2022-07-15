@@ -1,6 +1,6 @@
 import * as icons from './Icons';
 
-export const mainProjects = [
+export const getMainProjects = (muiImageDownloads) => [
   {
     id: 1,
     title: 'Vomad Guide',
@@ -35,7 +35,7 @@ export const mainProjects = [
       },
       {
         icon: icons.NPM,
-        description: 'Published on the NPM registry',
+        description: `${muiImageDownloads} downloads in the last week`,
       },
       { icon: icons.Surge, description: 'Demo hosted on Surge' },
     ],

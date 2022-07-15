@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import { MdLaunch } from 'react-icons/md';
@@ -5,7 +6,7 @@ import { FaGithub } from 'react-icons/fa';
 
 import { Section, ProjectCardBody as CardBody } from '../components';
 import { Button } from '../utils';
-import { mainProjects } from '../assets';
+import { getMainProjects } from '../assets';
 
 const Heading = styled.h2`
   padding-top: ${(props) => props.theme.spacing(3)};
@@ -103,11 +104,24 @@ const CardActions = styled.div`
 `;
 
 export function Projects() {
+  const [muiImageDownloads, setMuiImageDownloads] = useState('Loading');
+  const mainProjects = getMainProjects(muiImageDownloads);
+
+  useEffect(() => {
+    (async function () {
+      const response = await fetch(
+        'https://api.npmjs.org/downloads/point/last-week/mui-image'
+      );
+      const { downloads } = await response.json();
+      setMuiImageDownloads(downloads);
+    })();
+  }, []);
+
   return (
     <Section name="projects">
       <Heading>Selected works.</Heading>
       <Container>
-        {mainProjects.map((project) => (
+        {mainProjects?.map((project) => (
           <Card key={project.title} index={project.id}>
             <CardMedia image={project.image} />
             <CardInfo>

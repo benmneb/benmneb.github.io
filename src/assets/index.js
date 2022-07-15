@@ -3,6 +3,6 @@ export { GlobalStyles } from './GlobalStyles';
 
 export * from './Icons';
 
-export { mainProjects } from './mainProjects';
+export { getMainProjects } from './mainProjects';
 
 export { themes } from './terminalThemes';
