@@ -1,5 +1,5 @@
 import { StyledTheme } from './assets';
-import { GlobalStyles } from './assets/GlobalStyles';
+import { GlobalStyles } from './assets';
 
 import { NavTabs } from './components';
 import { Hello, Projects, Contact } from './sections';
