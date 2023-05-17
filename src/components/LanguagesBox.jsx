@@ -3,13 +3,13 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 import {
-  HTML,
   CSS,
+  HTML,
   Javascript,
-  ReactJS,
-  Redux,
-  NodeJS,
   MongoDB,
+  NodeJS,
+  ReactJS,
+  Vue,
 } from '../assets';
 
 import { IconsBox } from './index';
@@ -54,20 +54,20 @@ export function LanguagesBox() {
           onMouseLeave={() => setHovering(null)}
         />
         <CSS
-          onMouseEnter={() => setHovering('CSS3, SASS, CSS-in-JS')}
+          onMouseEnter={() => setHovering('CSS3, SASS, CSS-in-JS, Tailwind')}
           onMouseLeave={() => setHovering(null)}
         />
         <Javascript
-          onMouseEnter={() => setHovering('Javascript ES6+, jQuery')}
+          onMouseEnter={() => setHovering('Javascript, Typescript')}
           onMouseLeave={() => setHovering(null)}
         />
         <React
           size="75"
-          onMouseEnter={() => setHovering('ReactJS, NextJS')}
+          onMouseEnter={() => setHovering('React, React Native, Redux')}
           onMouseLeave={() => setHovering(null)}
         />
-        <Redux
-          onMouseEnter={() => setHovering('Redux, React-Redux')}
+        <Vue
+          onMouseEnter={() => setHovering('Vue, Nuxt')}
           onMouseLeave={() => setHovering(null)}
         />
         <NodeJS
