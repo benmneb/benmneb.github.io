@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import styled from 'styled-components';
 
-import { TerminalContextProvider, ReactTerminal } from 'react-terminal';
+import { ReactTerminal, TerminalContextProvider } from 'react-terminal';
 
 import emailjs from 'emailjs-com';
 
@@ -123,7 +123,7 @@ export function Contact() {
     return new Promise((resolve) => {
       emailjs
         .send(
-          'default_service',
+          'service_vhizoqh',
           'contact',
           {
             message: message,
