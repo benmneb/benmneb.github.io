@@ -28,7 +28,7 @@ const maxFromLength = 25;
 
 const welcomeMessage = (
   <span>
-    Type <strong>help</strong> for command list
+    Run <strong>help</strong> for command list
     <br />
     <br />
   </span>
@@ -472,7 +472,8 @@ export function Contact() {
                 <br />
                 <br />
                 <span>
-                  <strong>All fields complete.</strong> Type `send` to send it
+                  <strong style={success}>All fields complete.</strong> Run
+                  `send` to send it
                 </span>
               </span>
             ) : (
