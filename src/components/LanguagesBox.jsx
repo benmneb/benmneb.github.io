@@ -82,7 +82,7 @@ export function LanguagesBox() {
       <Languages>
         <HoverLanguages hovering={Boolean(hovering)}>{hovering}</HoverLanguages>
         <DefaultLanguages hovering={Boolean(hovering)}>
-          HTML5, CSS3, JS, ReactJS, Redux, NodeJS, MongoDB
+          HTML5, CSS3, JS/TS, React (Native), Vue, Node, MongoDB
         </DefaultLanguages>
       </Languages>
     </>
