@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-import { MdLaunch } from 'react-icons/md';
 import { FaGithub } from 'react-icons/fa';
+import { MdLaunch } from 'react-icons/md';
 
-import { Section, ProjectCardBody as CardBody } from '../components';
-import { Button } from '../utils';
 import { getMainProjects } from '../assets';
+import { ProjectCardBody as CardBody, Section } from '../components';
+import { Button } from '../utils';
 
 const Heading = styled.h2`
   padding-top: ${(props) => props.theme.spacing(3)};
@@ -49,6 +49,7 @@ const Card = styled.div`
 `;
 
 const CardMedia = styled.div`
+  position: relative;
   background-image: ${(props) => `url(${props.image})`};
   background-size: cover;
   background-position: center;
