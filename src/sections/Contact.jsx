@@ -16,6 +16,7 @@ const TerminalWrapper = styled.div`
   width: 600px;
   max-width: 100vw;
   font-size: 18px;
+  margin: 0 1rem;
 `;
 
 const indent1 = { marginLeft: 15 };
