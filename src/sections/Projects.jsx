@@ -6,6 +6,7 @@ import { MdLaunch } from 'react-icons/md';
 
 import { getMainProjects } from '../assets';
 import { ProjectCardBody as CardBody, Section } from '../components';
+import ImageThumbnail from '../components/ImageThumbnail';
 import { Button } from '../utils';
 
 const Heading = styled.h2`
@@ -45,41 +46,6 @@ const Card = styled.div`
       padding-top: ${(props) => props.theme.spacing(2)};
       padding-left: 0;
     }
-  }
-`;
-
-const CardMedia = styled.div`
-  position: relative;
-  background-image: ${(props) => `url(${props.image})`};
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-  border-radius: ${(props) => props.theme.spacing()};
-  filter: brightness(75%);
-  transition: ${(props) => `filter ${props.theme.transitions.long} ease`};
-
-  :hover {
-    filter: brightness(100%);
-    ::after {
-      transform: scale(1.05);
-    }
-  }
-
-  ::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: inherit;
-    background-size: cover;
-    transform-origin: center;
-    transition: ${(props) => `transform ${props.theme.transitions.long} ease`};
-  }
-
-  ${(props) => props.theme.breakpoints.down('tablet')} {
-    filter: brightness(100%);
   }
 `;
 
@@ -124,7 +90,10 @@ export function Projects() {
       <Container>
         {mainProjects?.map((project) => (
           <Card key={project.title} index={project.id}>
-            <CardMedia image={project.image} />
+            <ImageThumbnail
+              gif={project.gif}
+              placeholder={project.placeholder}
+            />
             <CardInfo>
               <CardTitle>{project.title}</CardTitle>
               <CardBody project={project} />

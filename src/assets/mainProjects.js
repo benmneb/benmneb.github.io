@@ -6,7 +6,8 @@ export const getMainProjects = (muiImageDownloads) => [
     title: 'Veganise It!',
     url: 'https://veganise.it',
     github: 'https://github.com/benmneb/veganise-it',
-    image: 'https://i.postimg.cc/c4JG7PPn/veganiseit.gif',
+    gif: 'https://i.postimg.cc/c4JG7PPn/veganiseit.gif',
+    placeholder: 'https://i.postimg.cc/CKtC3xxF/VI.webp',
     subTitle: "The internet's most surprisingly vegan recipes.",
     stack: [
       {
@@ -31,7 +32,8 @@ export const getMainProjects = (muiImageDownloads) => [
     title: 'mui-image',
     url: 'https://mui-image.surge.sh',
     github: 'https://github.com/benmneb/mui-image',
-    image: 'https://i.postimg.cc/wvddhMdq/mui-image.gif',
+    gif: 'https://i.postimg.cc/wvddhMdq/mui-image.gif',
+    placeholder: 'https://i.postimg.cc/SRb6K193/mui.webp',
     subTitle:
       'The only MUI React component to satisfy the Material guidelines for loading images.',
     stack: [
@@ -51,7 +53,8 @@ export const getMainProjects = (muiImageDownloads) => [
     title: 'Vomad Life',
     url: 'https://vomad.life',
     github: 'https://github.com/benmneb/vomad.life',
-    image: 'https://i.postimg.cc/cJjR3bQX/VL.gif',
+    gif: 'https://i.postimg.cc/cJjR3bQX/VL.gif',
+    placeholder: 'https://i.postimg.cc/CKdHrqYP/VL.webp',
     subTitle: 'Travel world. Eat Plants - A travel blog with a cause.',
     stack: [
       {
@@ -67,7 +70,8 @@ export const getMainProjects = (muiImageDownloads) => [
     title: 'Vomad Guide',
     url: 'https://vomad.guide',
     github: 'https://github.com/benmneb/guide',
-    image: 'https://i.postimg.cc/pX1bsqt1/vomadguide.gif',
+    gif: 'https://i.postimg.cc/pX1bsqt1/vomadguide.gif',
+    placeholder: 'https://i.postimg.cc/bJt0pfZ1/VG.webp',
     subTitle: "The world's first complete vegan product guide to Australia.",
     stack: [
       {
