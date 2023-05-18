@@ -52,7 +52,7 @@ export const getMainProjects = (muiImageDownloads) => [
     url: 'https://vomad.life',
     github: 'https://github.com/benmneb/vomad.life',
     image: 'https://i.postimg.cc/cJjR3bQX/VL.gif',
-    subTitle: 'Travel world. Eat Plants - A travel blog with a cause',
+    subTitle: 'Travel world. Eat Plants - A travel blog with a cause.',
     stack: [
       {
         icon: icons.Nuxt,
