@@ -1,14 +1,14 @@
-import { useState } from 'react';
+import { useState } from 'react'
 
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-import { ReactTerminal, TerminalContextProvider } from 'react-terminal';
+import { ReactTerminal, TerminalContextProvider } from 'react-terminal'
 
-import emailjs from 'emailjs-com';
+import emailjs from 'emailjs-com'
 
-import { themes } from '../assets';
-import { Section } from '../components';
-import { getTimeAgo } from '../utils';
+import { themes } from '../assets'
+import { Section } from '../components'
+import { getTimeAgo } from '../utils'
 
 const TerminalWrapper = styled.div`
   height: 455px;
@@ -16,7 +16,7 @@ const TerminalWrapper = styled.div`
   width: 600px;
   max-width: 100vw;
   font-size: 18px;
-  margin: 0 1rem;
+  padding: 0 1rem;
 `;
 
 const indent1 = { marginLeft: 15 };
