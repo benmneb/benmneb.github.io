@@ -81,7 +81,7 @@ export const getMainProjects = (muiImageDownloads) => [
       { icon: icons.Redux, description: 'Redux / React-Redux' },
       { icon: icons.NodeJS, description: 'NodeJS / ExpressJS server' },
       { icon: icons.PostgreSQL, description: 'PostgreSQL with Knex.js' },
-      { icon: icons.AWS, description: 'AWS Elastic Beanstalk' },
+      { icon: icons.Netlify, description: 'Deployed via Netlify' },
       { icon: icons.PWA, description: 'Installable as a PWA' },
     ],
   },
