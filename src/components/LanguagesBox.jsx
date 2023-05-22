@@ -82,7 +82,7 @@ export function LanguagesBox() {
       <Languages>
         <HoverLanguages hovering={Boolean(hovering)}>{hovering}</HoverLanguages>
         <DefaultLanguages hovering={Boolean(hovering)}>
-          HTML5, CSS3, JS/TS, React (Native), Vue, Node, MongoDB
+          I like UI, UX, open-source, privacy and meditation.
         </DefaultLanguages>
       </Languages>
     </>
