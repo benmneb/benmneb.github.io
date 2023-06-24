@@ -35,16 +35,16 @@ export const GlobalStyles = createGlobalStyle`
       color: ${(props) => props.theme.colors.font};
     }
 
-    .index_controls__9z-dM {
+    .index_controls__sXDjs {
       top: 2px
     }
 
-    .index_controls__9z-dM,
-    .index_lineText__2Poex {
+    .index_controls__sXDjs,
+    .index_lineText__j6qNj {
       font-size: 18px
     }
 
-    .index_editor__2tqRz {
+    .index_editor__JoDSg {
       overscroll-behavior: contain;
     }
   }
