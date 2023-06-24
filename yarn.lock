@@ -1863,7 +1863,7 @@ __metadata:
     react: 18.2.0
     react-dom: 18.2.0
     react-icons: ^4.2.0
-    react-terminal: ^1.2.1
+    react-terminal: 1.3.1
     styled-components: ^5.3.0
     typed.js: ^2.0.12
     use-ackee: ^3.0.1
@@ -2010,7 +2010,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-terminal@npm:^1.2.1":
+"react-terminal@npm:1.3.1":
   version: 1.3.1
   resolution: "react-terminal@npm:1.3.1"
   dependencies:
