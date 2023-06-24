@@ -1,13 +1,13 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), styled-components, [typed-js](https://github.com/mattboldt/typed.js/) and [emailjs](https://www.emailjs.com/). Images stored on [postimage](https://postimages.org/).
+## Develop
 
-## To deploy updates:
+Use `dev` as base branch.
 
-On the `dev` branch, run:
+## Deploy
 
-### `npm run deploy`
+Merge `dev` to `main`.
 
-And it will build and push to master branch / deploy with `gh-pages`.
+And it will build and deploy via Github actions.
 
 ## License
 
-(c) [benmneb](https://github.com/benmneb) | [ISC License](https://choosealicense.com/licenses/isc/).
+[benmneb](https://github.com/benmneb) x [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)
