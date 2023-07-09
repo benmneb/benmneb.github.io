@@ -1,5 +1,6 @@
-export { NavTabs } from './NavTabs';
-export { LanguagesBox } from './LanguagesBox';
 export { IconsBox } from './IconsBox';
-export { Section } from './Section';
+export { LanguagesBox } from './LanguagesBox';
+export { NavTabs } from './NavTabs';
+export { ProjectCard } from './ProjectCard';
 export { ProjectCardBody } from './ProjectCardBody';
+export { Section } from './Section';

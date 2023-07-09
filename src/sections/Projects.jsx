@@ -1,13 +1,9 @@
 import { useEffect, useState } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { FaGithub } from 'react-icons/fa';
-import { MdLaunch } from 'react-icons/md';
-
 import { getMainProjects } from '../assets';
-import { ProjectCardBody as CardBody, Section } from '../components';
-import ImageThumbnail from '../components/ImageThumbnail';
-import { Button } from '../utils';
+import { ProjectCard, Section } from '../components';
 
 const Heading = styled.h2`
   padding-top: ${(props) => props.theme.spacing(3)};
@@ -25,52 +21,7 @@ const Container = styled.div`
   }
 `;
 
-const Card = styled.div`
-  display: flex;
-  width: 100%;
-  padding: ${(props) => props.theme.spacing(2)};
-  flex-direction: ${(props) => (props.index % 2 ? 'row-reverse' : 'row')};
-  gap: ${(props) => props.theme.spacing(4)};
-
-  & > * {
-    width: 50%;
-    height: 300px;
-  }
-
-  ${(props) => props.theme.breakpoints.down('tablet')} {
-    flex-direction: column;
-    gap: 0;
-
-    & > * {
-      width: 100%;
-      padding-top: ${(props) => props.theme.spacing(2)};
-      padding-left: 0;
-    }
-  }
-`;
-
-const CardInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: center;
-
-  ${(props) => props.theme.breakpoints.down('tablet')} {
-    justify-content: space-evenly;
-  }
-`;
-
-const CardTitle = styled.h3`
-  line-height: ${(props) => props.theme.spacing(5)};
-  width: 100%;
-  margin: 0;
-`;
-
-const CardActions = styled.div`
-  display: flex;
-`;
-
-export function Projects() {
+function ProjectList() {
   const [muiImageDownloads, setMuiImageDownloads] = useState('Loading');
   const mainProjects = getMainProjects(muiImageDownloads);
 
@@ -85,30 +36,29 @@ export function Projects() {
   }, []);
 
   return (
-    <Section name="projects">
-      <Heading>Selected works.</Heading>
-      <Container>
-        {mainProjects?.map((project) => (
-          <Card key={project.title} index={project.id}>
-            <ImageThumbnail
-              gif={project.gif}
-              placeholder={project.placeholder}
-            />
-            <CardInfo>
-              <CardTitle>{project.title}</CardTitle>
-              <CardBody project={project} />
-              <CardActions>
-                <Button primary href={project.url} icon={<MdLaunch />}>
-                  Launch
-                </Button>
-                <Button href={project.github} icon={<FaGithub />}>
-                  Source
-                </Button>
-              </CardActions>
-            </CardInfo>
-          </Card>
-        ))}
-      </Container>
-    </Section>
+    <Container>
+      {mainProjects?.map((project) => (
+        <ProjectCard
+          project={project}
+          key={project.id}
+          // isSelected={match.params.id === project.id}
+          // history={history}
+        />
+      ))}
+    </Container>
+  );
+}
+
+export function Projects() {
+  return (
+    <BrowserRouter>
+      <Section name="projects">
+        <Heading>Selected works.</Heading>
+        <Routes>
+          <Route path="/" element={<ProjectList />} />
+          <Route path="/:id" element={<ProjectList />} />
+        </Routes>
+      </Section>
+    </BrowserRouter>
   );
 }
