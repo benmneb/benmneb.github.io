@@ -1,12 +1,4 @@
-## Develop
-
-Use `dev` as base branch.
-
-## Deploy
-
-Merge `dev` to `main`.
-
-And it will build and deploy via Github actions.
+This branch is the deprecated V1 version.
 
 ## License
 
