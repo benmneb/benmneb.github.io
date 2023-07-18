@@ -5,12 +5,14 @@ const StyledButton = styled.a`
   align-items: center;
   justify-content: center;
   gap: ${(props) => props.theme.spacing(1)};
-  padding: ${(props) => props.theme.spacing(1, 0)};
+  padding: ${(props) => props.theme.spacing(1, 2)};
   margin: ${(props) => props.theme.spacing(0.5, 1)};
-  width: 50%;
-  border-radius: ${(props) => props.theme.spacing(0.5)};
+  width: 100%;
+  align-self: center;
+  border-radius: ${(props) => props.theme.spacing(1.5)};
   transition: ${(props) =>
     `all ${props.theme.transitions.shorter} ease-in-out`};
+  cursor: pointer;
 
   ${(props) =>
     props.primary

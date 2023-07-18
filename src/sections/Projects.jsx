@@ -10,7 +10,7 @@ const Heading = styled.h2`
   display: inline;
 `;
 
-const Container = styled.div`
+const Container = styled.ul`
   width: 100%;
   max-width: ${(props) => props.theme.breakpoints.hd.min};
   display: flex;
@@ -38,12 +38,7 @@ function ProjectList() {
   return (
     <Container>
       {mainProjects?.map((project) => (
-        <ProjectCard
-          project={project}
-          key={project.id}
-          // isSelected={match.params.id === project.id}
-          // history={history}
-        />
+        <ProjectCard project={project} key={project.id} />
       ))}
     </Container>
   );

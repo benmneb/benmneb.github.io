@@ -4,11 +4,12 @@ import useImagePreloader from '../utils/useImagePreloader';
 
 const CardMedia = styled.div`
   position: relative;
+  height: 500px;
   background-image: ${(props) => `url(${props.image})`};
   background-size: cover;
   background-position: center;
   overflow: hidden;
-  border-radius: ${(props) => props.theme.spacing()};
+  border-radius: ${(props) => props.theme.spacing(1, 1, 0, 0)};
   filter: brightness(75%);
   transition: ${(props) => `filter ${props.theme.transitions.long} ease`};
 
