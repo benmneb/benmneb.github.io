@@ -1,12 +1,12 @@
 {
   "$schema": "http://json.schemastore.org/prettierrc",
   "printWidth": 80,
-  "arrowParens": "always",
+  "arrowParens": "avoid",
   "bracketSpacing": true,
   "jsxBracketSameLine": false,
   "jsxSingleQuote": false,
   "singleQuote": true,
-  "semi": true,
-  "trailingComma": "es5",
+  "semi": false,
+  "trailingComma": "all",
   "useEditorConfig": true
 }
