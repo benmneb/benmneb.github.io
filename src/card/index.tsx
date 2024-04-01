@@ -1,37 +1,49 @@
 import { clsx } from 'clsx'
-import { PanInfo, motion } from 'framer-motion'
-import { useRef } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { motion, useMotionValue } from 'framer-motion'
+import { memo, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { CardProps } from '../card-list/data'
-import { useScrollConstraints } from '../hooks/use-scroll-constraints'
+import {
+  useInvertedBorderRadius,
+  useScrollConstraints,
+  useWheelScroll,
+} from '../hooks'
+import { closeSpring, openSpring } from './constants'
 
-const openSpring = { type: 'spring', stiffness: 200, damping: 18 }
-const closeSpring = { type: 'spring', stiffness: 300, damping: 30 }
 const dismissDistance = 150
 
-export default function Card(props: CardProps) {
+const Card = memo(({ isSelected, ...props }: CardProps) => {
   const navigate = useNavigate()
-  const { id } = useParams()
-  const isSelected = props.id === id
+
+  const containerRef = useRef<HTMLDivElement>(null)
   const cardRef = useRef<HTMLDivElement>(null)
   const constraints = useScrollConstraints({
     element: cardRef,
     enabled: isSelected,
   })
 
-  function handleDragEnd(
-    event: MouseEvent | TouchEvent | PointerEvent,
-    info: PanInfo,
-  ) {
-    if (!isSelected) return
+  const y = useMotionValue(0)
+  const zIndex = useMotionValue(isSelected ? 2 : 0)
 
-    if (info.offset.y > dismissDistance) {
-      navigate('/')
+  // Maintain the visual border radius when we perform the layoutTransition by inverting its scaleX/Y
+  const inverted = useInvertedBorderRadius(20)
+
+  function checkSwipeToDismiss() {
+    if (y.get() > dismissDistance) navigate('/')
+  }
+
+  function checkZIndex(latest) {
+    if (isSelected) {
+      zIndex.set(2)
+    } else if (!isSelected && latest.scaleX < 1.01) {
+      zIndex.set(0)
     }
   }
 
+  useWheelScroll(containerRef, y, constraints, checkSwipeToDismiss, isSelected)
+
   return (
-    <div className={clsx('h-48')}>
+    <div className={clsx('h-48')} ref={containerRef}>
       <motion.div
         initial={false}
         animate={{ opacity: isSelected ? 1 : 0 }}
@@ -50,14 +62,15 @@ export default function Card(props: CardProps) {
           isSelected ? 'inset-0 fixed w-1/2 mx-auto h-auto my-12' : 'w-full',
         )}
         onClick={() => navigate(`/${props.id}`)}
-        layout
-        initial={{ borderRadius: 16 }}
-        transition={isSelected ? openSpring : closeSpring}
-        drag={isSelected && 'y'}
+        style={{ ...inverted, zIndex, y }}
+        layoutTransition={isSelected ? openSpring : closeSpring}
+        drag={isSelected ? 'y' : false}
         dragConstraints={constraints}
-        dragSnapToOrigin
-        onDragEnd={handleDragEnd}
+        onDrag={checkSwipeToDismiss}
+        onUpdate={checkZIndex}
       />
     </div>
   )
-}
+})
+
+export default Card

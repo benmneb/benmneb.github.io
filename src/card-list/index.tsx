@@ -1,14 +1,16 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, useParams } from 'react-router-dom'
 import Card from '../card'
 import { data } from './data'
 
 function List() {
+  const { id } = useParams()
+
   return (
-    <main className="grid grid-cols-3 gap-4">
+    <ul className="card-list">
       {data.map(card => (
-        <Card key={card.id} {...card} />
+        <Card key={card.id} isSelected={card.id === id} {...card} />
       ))}
-    </main>
+    </ul>
   )
 }
 

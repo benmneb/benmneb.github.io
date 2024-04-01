@@ -4,7 +4,7 @@ import ReloadPrompt from './reload-prompt'
 
 export default function App() {
   return (
-    <div className="container mx-auto">
+    <div className="app-container">
       <Header />
       <CardList />
       <ReloadPrompt />
